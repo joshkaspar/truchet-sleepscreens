@@ -98,6 +98,6 @@ function keyPressed() {
     redraw(); // regenerate the pattern
   }
   if (key === "s" || key === "S") {
-    saveBMP("truchet_480x800", "png"); 
+    saveBMP("truchet_480x800");
   }
 }
