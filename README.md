@@ -2,6 +2,8 @@
 
 A collection of p5.js sketches exploring square and hex-based Truchet-style tile systems.
 
+Primary purpose: generate sleep-screen artwork for an XTeink X4 e-ink display.
+
 ## Sketches
 
 - `p5-truchet-diagonal.js`: classic diagonal split square tiles (random 4-way rotation)
