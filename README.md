@@ -1,4 +1,4 @@
-# XTeink X4 Sleep Screens
+# Truchet Tile-Based XTeink X4 Sleep Screens
 
 A collection of p5.js sketches for generating sleep-screen artwork for an XTeink X4 e-ink display, with Truchet and tile-system experiments.
 
