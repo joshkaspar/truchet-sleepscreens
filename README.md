@@ -4,7 +4,7 @@ A collection of p5.js sketches for generating sleep-screen artwork for an XTeink
 
 ## Usage
 - Go to https://joshkaspar.github.io/inksomnia
-- Choose one of the scripts at 
+- Load a script from the dropdown menu 
   - `R` to regenerate
   - `S` to save a BMP
 
