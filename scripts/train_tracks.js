@@ -16,13 +16,10 @@ function draw() {
 
   const s = 40; // tile size (480-40)/40 = 11 cols, (800-40)/40 = 19 rows
   const u = s / 4; // track gauge
-  const margin = s / 2; // 20px border on all sides
   const e = 3; // sleeper overhang
 
-  rect(margin, margin, width - 2 * margin, height - 2 * margin);
-
-  for (let x = margin; x < width - margin; x += s) {
-    for (let y = margin; y < height - margin; y += s) {
+  for (let x = 0; x < width; x += s) {
+    for (let y = 0; y < height; y += s) {
       push();
       translate(x + s / 2, y + s / 2);
       rotate(random([0, HALF_PI]));
