@@ -1,7 +1,7 @@
 const bgCol = "#ffffff";
 const fgCol = "#000000";
-const minEdgeDist = 100;
-const minPointDist = 350;
+const minEdgeDist = 120;
+const minPointDist = 267;
 
 let ringSpacing, s1, s2, maxRadius;
 
@@ -116,8 +116,17 @@ function generatePoints() {
     attempts++;
   } while (dist(s1.x, s1.y, s2.x, s2.y) < minPointDist && attempts < 500);
 
-  const d = dist(s1.x, s1.y, s2.x, s2.y);
-  maxRadius = round((d * 0.75) / ringSpacing) * ringSpacing;
+  // Find the minimum radius that guarantees every canvas corner is covered
+  // by at least one source. For each corner, take the smaller Chebyshev
+  // distance to either source; the largest of those four values is the radius needed.
+  const corners = [[0, 0], [width, 0], [0, height], [width, height]];
+  let needed = 0;
+  for (const [cx, cy] of corners) {
+    const cd1 = max(abs(cx - s1.x), abs(cy - s1.y));
+    const cd2 = max(abs(cx - s2.x), abs(cy - s2.y));
+    needed = max(needed, min(cd1, cd2));
+  }
+  maxRadius = round(needed / ringSpacing) * ringSpacing;
 }
 
 function draw() {
