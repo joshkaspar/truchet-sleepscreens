@@ -70,6 +70,7 @@ function saveBMP(filename = "canvas") {
 
 function setup() {
   createCanvas(480, 800);
+  pixelDensity(1);
   noLoop();
 
   generatePoints();
